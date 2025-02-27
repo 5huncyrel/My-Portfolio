@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>My Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif;}
+.w3-row-padding img {margin-bottom: 12px; border-radius: 10px;}
+.w3-sidebar {width: 120px; background: rgb(17, 41, 7); transition: 0.3s;}
+#main {margin-left: 120px; background-color: #a4cf9e; transition: 0.3s;}
+#about, #activity, #contact {background-color: rgb(17, 41, 7);}
+
+
+@media only screen and (max-width: 600px) {
+  #main {margin-left: 0;}
+  .w3-sidebar {width: 0; overflow: hidden;}
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.w3-button:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.profile-img {
+  border-radius: 10%;
+  width: 80%;
+  display: block;
+  margin: auto;
+}
+</style>
+</head>
+<body class="w3-black">
+
+<!-- Collapsible Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+    <img src="img1.jpg" style="width:100% ">
+  <a href="#home" class="w3-bar-item w3-button w3-padding-large w3-black w3-hover-blue"><i class="fa fa-home w3-xxlarge"></i><p>HOME</p></a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-green"><i class="fa fa-user w3-xxlarge"></i><p>ABOUT</p></a>
+  <a href="#activity" class="w3-bar-item w3-button w3-padding-large w3-hover-khaki"><i class="fa fa-code w3-xxlarge"></i><p>ACTIVITY</p></a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-red"><i class="fa fa-envelope w3-xxlarge"></i><p>CONTACT</p></a>
+</nav>
+
+<!-- Main Content -->
+<div class="w3-padding-large" id="main">
+  <header class="w3-container w3-padding-32 w3-center w3-black w3-row" id="home">
+    <div class="w3-half w3-container">
+      <h1 class="w3-jumbo">I'm Shun Cyrel Caseres.</h1>
+      <p>Web Developer.</p>
+      <a href="resume.pdf" download class="w3-button w3-teal w3-padding-large">Download Resume</a>
+    </div>
+    <div class="w3-half w3-container">
+      <img src="me.jpg" alt="my_img" class="w3-image profile-img">
+    </div>
+  </header><Br>
+
+
+
+<!-- About Section -->
+  <section id="about" class="w3-container w3-padding-64  w3-padding-large ">
+    <h2 class="w3-text-white "><i class="fa fa-user fa-fw w3-margin-right w3-text-teal"></i><b>About Me</b></h2>
+    <hr style="width:200px" class="w3-opacity">
+        <div class=" w3-container">
+          <p>Hi! I'm <b>Shun Cyrel S. Caseres</b>, a passionate web developer. Currently, 
+            I'm a 3rd-year BSIT student at the University of Science and Technology of Southern Philippines (USTP).</p>
+          <p>      I pursue BSIT because it's in demand nowadays and due to curiousity I want to explore this field more. 
+            Aside from that I want to learn and master more about developing a website. </p>
+        </div>
+        <div class="w3-half w3-container w3-center">
+        </div>
+    
+  
+    <h2 class=" w3-text-white"><i class="fa fa-tasks fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><b>My Skills</b></h2>
+        <p class="w3-wide">Web Dev</p>
+        <div class="w3-white">
+            <div class="w3-green" style="height:28px;width:80%"></div>
+        </div>
+        <p class="w3-wide">Wordpress</p>
+        <div class="w3-white">
+            <div class="w3-yellow" style="height:28px;width:60%"></div>
+        </div>
+        <p class="w3-wide">Web Design</p>
+        <div class="w3-white">
+            <div class="w3-deep-orange" style="height:28px;width:70%"></div>
+        </div><br>
+      
+  
+    <h2 class="w3-text-white"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i><b>Education</b></h2>
+      <div class="w3-container w3-green w3-hover-pale-green w3-text-white">
+        <h5>Iponan Elementary School</h5>
+        <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2011 - 2016</h6>
+      </div>
+      <div class="w3-container w3-amber w3-hover-pale-yellow w3-text-white">
+        <h5>Carmen National High School</h5>
+        <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2016 - 2022</h6>
+      </div>
+      <div class="w3-container w3-deep-orange w3-hover-pale-red w3-text-white">
+        <h5>University Of Science and Technology of Southern Philippines</h5>
+        <h6 class="w3-text-black"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2022 - 2026</h6>
+      </div>
+  </section><br>
+  
+  <!-- Activity Section -->
+  <section id="activity" class="w3-container w3-padding-64">
+    <div class="w3-content w3-text-black">
+      <h2 class="w3-center w3-text-white"><i class="fa fa-folder-open w3-margin-right w3-xxlarge w3-text-teal"></i>Github Activities</h2>
+      <div class="w3-row-padding w3-margin-top w3-center">
+        <div class="w3-half w3-padding">
+          <div class="w3-card w3-hover-shadow w3-round w3-padding w3-pale-green">
+            <h4 class="w3-text-blue">HTML5 Activity</h4>
+            <a href="https://5huncyrel.github.io/HTML5_Activity/" target="_blank" class="w3-button w3-teal w3-margin-top">View Project</a>
+          </div>
+        </div>
+        <div class="w3-half w3-padding">
+          <div class="w3-card w3-hover-shadow w3-round w3-padding w3-pale-green">
+            <h4 class="w3-text-red">CSS Activity</h4>
+            <a href="https://5huncyrel.github.io/CSS_Activity/" target="_blank" class="w3-button w3-teal w3-margin-top">View Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><br>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="w3-container w3-padding-64 w3-black w3-text-white">
+    <div class="w3-content">
+      <h2 class="w3-center"><i class="fa fa-envelope w3-margin-right w3-text-teal"></i>Contact Me</h2>
+      <div class="w3-row-padding w3-margin-top">
+        <div class="w3-half w3-container">
+          <p><i class="fa fa-map-marker w3-margin-right w3-text-red"></i> Cagayan de Oro, Philippines</p>
+          <p><i class="fa fa-facebook-official w3-margin-right w3-text-blue"></i> Facebook: Shun Cyrel Caseres</p>
+          <p><i class="fa fa-envelope w3-margin-right w3-text-khaki"></i> Email: caseres.shun@gmail.com</p>
+        </div>
+        <div class="w3-half w3-container">
+          <form action="https://formspree.io/f/yourformid" method="POST">
+            <input class="w3-input w3-round w3-margin-bottom" type="text" placeholder="Name" required name="Name">
+            <input class="w3-input w3-round w3-margin-bottom" type="email" placeholder="Email" required name="Email">
+            <textarea class="w3-input w3-round w3-margin-bottom" placeholder="Message" required name="Message"></textarea>
+            <button class="w3-button w3-teal w3-round w3-padding-large" type="submit"><i class="fa fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Redesigned Footer -->
+  <footer class="w3-container w3-padding-32 w3-black w3-center">
+    <p>Connect with me:</p>
+    <a href="#" class="w3-button w3-round w3-hover-opacity"><i class="fa fa-facebook-official"></i></a>
+    <a href="#" class="w3-button w3-round w3-hover-opacity"><i class="fa fa-instagram"></i></a>
+    <a href="#" class="w3-button w3-round w3-hover-opacity"><i class="fa fa-twitter"></i></a>
+    <a href="#" class="w3-button w3-round w3-hover-opacity"><i class="fa fa-linkedin"></i></a>
+  </footer>
+  
+</div>
+
+</body>
+</html>
