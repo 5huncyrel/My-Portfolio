@@ -16,7 +16,7 @@ fetch("courses.json")
                 groupedCourses[key].push(course);
             });
 
-            // Display grouped subjects
+            // Display grouped subjects in a table
             for (let key in groupedCourses) {
                 let container = document.createElement("div");
 
@@ -28,19 +28,41 @@ fetch("courses.json")
                     content.style.display = content.style.display === "none" ? "block" : "none";
                 };
 
-                let sublist = document.createElement("ul");
-                sublist.classList.add("course-content");
-                sublist.style.display = "none"; // Hide courses
+                let tableContainer = document.createElement("div");
+                tableContainer.classList.add("course-content");
+                tableContainer.style.display = "none"; // Hide courses initially
 
+                // Create table structure
+                let table = document.createElement("table");
+                table.classList.add("course-table");
+
+                // Table header
+                let tableHeader = document.createElement("thead");
+                let headerRow = document.createElement("tr");
+                headerRow.innerHTML = `
+                    <th>Course Code</th>
+                    <th>Description</th>
+                    <th>Credits</th>
+                `;
+                tableHeader.appendChild(headerRow);
+                table.appendChild(tableHeader);
+
+                // Table body
+                let tableBody = document.createElement("tbody");
                 groupedCourses[key].forEach(course => {
-                    let listItem = document.createElement("li");
-                    listItem.innerHTML = `<strong>${course.code} - ${course.description}</strong> <br>
-                                          <em>Credits: ${course.credit}</em>`;
-                    sublist.appendChild(listItem);
+                    let row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${course.code}</td>
+                        <td>${course.description}</td>
+                        <td>${course.credit}</td>
+                    `;
+                    tableBody.appendChild(row);
                 });
 
+                table.appendChild(tableBody);
+                tableContainer.appendChild(table);
                 container.appendChild(header);
-                container.appendChild(sublist);
+                container.appendChild(tableContainer);
                 courseList.appendChild(container);
             }
         } else {
