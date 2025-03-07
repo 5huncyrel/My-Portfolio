@@ -43,6 +43,8 @@ span {
     background-color: teal;
     list-style-type: none;
     position: fixed;
+    margin: 0;
+    padding: 0;
     top: 0;
     width: 100%;
     text-align: center;
