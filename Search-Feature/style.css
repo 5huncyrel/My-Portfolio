@@ -46,9 +46,10 @@ span {
     margin: 0;
     padding: 0;
     top: 0;
-    width: 100%;
     text-align: center;
-    padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden; 
 }
 
 .nav li {
