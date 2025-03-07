@@ -1,4 +1,4 @@
-fetch("Search-Feature/courses.json")
+fetch("Subjects-Taken/courses.json")
     .then(response => response.json())
     .then(data => {
         let coursesTable = document.getElementById("courses-list").getElementsByTagName("tbody")[0];
