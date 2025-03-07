@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="resets.css" media="screen">
+    <link rel="stylesheet" href="style.css" media="screen">
+</head>
+
+<body>
+
+    <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#courses">Subjects Taken</a></li>
+    </ul>
+
+    <div class="page-content">
+        <div class="card" id="about">
+            <p class="card-header">About</p>
+            <div class="card-body about-content">
+                <img src="me.jpg" alt="Shun Cyrel Caseres" class="about-img">
+                <p>Hi! I'm Shun Cyrel S. Caseres. Currently, I'm a 3rd-year BSIT student at the University of Science and Technology of Southern Philippines (USTP).
+                    I pursue BSIT because it's in demand nowadays and due to curiosity, I want to explore this field more. 
+                    Aside from that, I want to learn and master more about developing a website.</p>
+            </div>
+        </div>
+
+    
+        
+        <div class="card" id="education">
+            <p class="card-header">Education</p>
+            <p class="card-body">
+                <strong>Iponan Elementary School</strong> <br>
+                📅 2011 - 2016 <br><br>
+                <strong>Carmen National High School</strong> <br>
+                📅 2016 - 2022 <br><br>
+                <strong>University of Science and Technology of Southern Philippines</strong> <br>
+                📅 2022 - 2026</p>
+        </div>
+
+        <div class="card" id="skills">
+            <p class="card-header">Skills</p>
+            <div class="card-body">
+                <div class="skill">
+                    <strong><p>Web Dev</p></strong>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%; background: rgb(74, 230, 74);"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <strong><p>Wordpress</p></strong>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%; background: rgb(120, 75, 242);"></div>
+                    </div>
+                </div>
+                <div class="skill">
+                    <strong><p>Web Design</p></strong>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 60%; background: rgb(255, 78, 78);"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" id="portfolio">
+            <p class="card-header">Portfolio</p>
+            <div class="portfolio-container">
+                <div class="portfolio-item">
+                    <h4>HTML5 Activity</h4>
+                    <a href="https://5huncyrel.github.io/HTML5_Activity/" target="_blank">View Activity</a>
+                </div>
+                <div class="portfolio-item">
+                    <h4>CSS Activity</h4>
+                    <a href="https://5huncyrel.github.io/CSS_Activity/" target="_blank">View Activity</a>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="card" id="courses">
+            <p class="card-header">Subjects Taken</p><br><br>
+        
+            <table id="courses-list" class="card-body">
+                <thead>
+                    <tr>
+                        <th>Year Level</th>
+                        <th>Semester</th>
+                        <th>Course Code</th>
+                        <th>Description</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Course rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+
+        
+
+    <script src="courses.js"> </script>
+
+</body>
