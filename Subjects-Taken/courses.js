@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("courses.json")  
         .then(response => response.json())
         .then(data => {
-            const coursesTable = document.getElementById("courses-list");
+            const coursesTable = document.getElementById("courses-list").getElementsByTagName("tbody")[0];
 
             data.courses.forEach(course => {
                 let row = document.createElement("tr");
