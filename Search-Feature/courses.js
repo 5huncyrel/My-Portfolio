@@ -56,6 +56,11 @@ fetch("course.json")
         // Display all courses initially
         displayCourses(data.courses);
 
+        // Function to normalize year level (remove suffixes like "st", "nd", "rd", "th")
+        function normalizeYearLevel(yearLevel) {
+            return yearLevel.replace(/\d+(st|nd|rd|th)/, (match) => match.replace(/\D/g, ''));
+        }
+
         // Search functionality
         searchInput.addEventListener("input", function() {
             const searchTerm = searchInput.value.toLowerCase();
@@ -63,8 +68,8 @@ fetch("course.json")
                 return (
                     course.code.toLowerCase().includes(searchTerm) || 
                     course.description.toLowerCase().includes(searchTerm) ||
-                    course.year_level.toLowerCase().includes(searchTerm) || 
-                    course.sem.toLowerCase().includes(searchTerm)          
+                    normalizeYearLevel(course.year_level).includes(searchTerm) || 
+                    course.sem.toLowerCase().includes(searchTerm)           
                 );
             });
             displayCourses(filteredCourses); // Display the filtered courses
