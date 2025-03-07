@@ -56,23 +56,25 @@ fetch("course.json")
         // Display all courses initially
         displayCourses(data.courses);
 
-        // Function to normalize year level (remove suffixes like "st", "nd", "rd", "th")
+        // Function to normalize year level (remove suffixes like "st", "nd", "rd", "th" and convert to plain number)
         function normalizeYearLevel(yearLevel) {
-            // Remove any numeric suffix like "st", "nd", "rd", "th"
-            return yearLevel.replace(/(st|nd|rd|th)/, "");
+            return yearLevel.toLowerCase().replace(/(st|nd|rd|th)/g, "").trim(); 
         }
 
         // Search functionality
-        searchInput.addEventListener("input", function() {
-            const searchTerm = searchInput.value.toLowerCase();
+        searchInput.addEventListener("input", function () {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            const normalizedSearchTerm = normalizeYearLevel(searchTerm); // Normalize search term
+
             const filteredCourses = data.courses.filter(course => {
                 return (
-                    course.code.toLowerCase().includes(searchTerm) || 
+                    course.code.toLowerCase().includes(searchTerm) ||
                     course.description.toLowerCase().includes(searchTerm) ||
-                    normalizeYearLevel(course.year_level).toLowerCase().includes(searchTerm) || // Compare without suffix
-                    normalizeYearLevel(course.sem).toLowerCase().includes(searchTerm) // Allow search by semester
+                    normalizeYearLevel(course.year_level).includes(normalizedSearchTerm) || // Compare without suffix
+                    normalizeYearLevel(course.sem).includes(normalizedSearchTerm) // Allow search by semester
                 );
             });
+
             displayCourses(filteredCourses); // Display the filtered courses
         });
     })
