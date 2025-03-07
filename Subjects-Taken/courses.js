@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://raw.githubusercontent.com/Jayrille/my-portfolio/refs/heads/main/courses.json")  
+    fetch("courses.json")  
         .then(response => response.json())
         .then(data => {
             const coursesTable = document.getElementById("courses-list");
