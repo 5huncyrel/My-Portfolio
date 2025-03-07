@@ -56,9 +56,9 @@ fetch("course.json")
         // Display all courses initially
         displayCourses(data.courses);
 
-        // Function to normalize year level (remove suffixes like "st", "nd", "rd", "th" and convert to plain number)
+        // Function to normalize year level (remove suffixes like "st", "nd", "rd", "th")
         function normalizeYearLevel(yearLevel) {
-            return yearLevel.toLowerCase().replace(/(st|nd|rd|th)/g, "").trim(); 
+            return yearLevel.toLowerCase().replace(/(st|nd|rd|th)/g, "").trim();
         }
 
         // Search functionality
@@ -67,11 +67,14 @@ fetch("course.json")
             const normalizedSearchTerm = normalizeYearLevel(searchTerm); // Normalize search term
 
             const filteredCourses = data.courses.filter(course => {
+                const courseYearNormalized = normalizeYearLevel(course.year_level); // Normalize course year
+                
                 return (
                     course.code.toLowerCase().includes(searchTerm) ||
                     course.description.toLowerCase().includes(searchTerm) ||
-                    normalizeYearLevel(course.year_level).includes(normalizedSearchTerm) || // Compare without suffix
-                    normalizeYearLevel(course.sem).includes(normalizedSearchTerm) // Allow search by semester
+                    course.year_level.toLowerCase().includes(searchTerm) || // Original "1st", "2nd"
+                    courseYearNormalized.includes(normalizedSearchTerm) || // "1", "2"
+                    course.sem.toLowerCase().includes(searchTerm) // Allow search by semester
                 );
             });
 
