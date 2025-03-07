@@ -62,7 +62,9 @@ fetch("course.json")
             const filteredCourses = data.courses.filter(course => {
                 return (
                     course.code.toLowerCase().includes(searchTerm) || 
-                    course.description.toLowerCase().includes(searchTerm)
+                    course.description.toLowerCase().includes(searchTerm) ||
+                    course.year_level.toLowerCase().includes(searchTerm) || 
+                    course.sem.toLowerCase().includes(searchTerm)          
                 );
             });
             displayCourses(filteredCourses); // Display the filtered courses
