@@ -58,7 +58,8 @@ fetch("course.json")
 
         // Function to normalize year level (remove suffixes like "st", "nd", "rd", "th")
         function normalizeYearLevel(yearLevel) {
-            return yearLevel.replace(/\d+(st|nd|rd|th)/, (match) => match.replace(/\D/g, ''));
+            // Remove any numeric suffix like "st", "nd", "rd", "th"
+            return yearLevel.replace(/(st|nd|rd|th)/, "");
         }
 
         // Search functionality
@@ -68,8 +69,8 @@ fetch("course.json")
                 return (
                     course.code.toLowerCase().includes(searchTerm) || 
                     course.description.toLowerCase().includes(searchTerm) ||
-                    normalizeYearLevel(course.year_level).includes(searchTerm) || 
-                    course.sem.toLowerCase().includes(searchTerm)           
+                    normalizeYearLevel(course.year_level).toLowerCase().includes(searchTerm) || // Compare without suffix
+                    normalizeYearLevel(course.sem).toLowerCase().includes(searchTerm) // Allow search by semester
                 );
             });
             displayCourses(filteredCourses); // Display the filtered courses
